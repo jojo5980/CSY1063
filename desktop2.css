@@ -1,0 +1,54 @@
+body {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "main main main"
+        "footer footer footer";
+}
+
+nav {
+    display: block;
+    background-color: yellowgreen;
+    grid-area: nav;
+}
+
+.showNav {  
+    height: 0.8cm;
+    width: 1.25em;
+    display: block;
+    border-top: 0.2em solid green;
+    border-bottom: 0.2em solid green;
+    border-radius: 0.1em;
+}
+
+.showNav::before{
+    content: '';
+    position: absolute;
+    width: 1.25em;
+    margin-top: 0.3em;
+    border-top: 0.2em solid #fff
+}
+
+nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    text-align: center;
+}
+
+nav>ul>li {
+    position: relative;
+}
+
+nav ul ul {
+    position: absolute;
+    display: block;
+    background-color: blueviolet;
+    padding: 0;
+    width: 100%;
+    opacity: 0;transition: opacity 0.5s ease-in;
+    pointer-events: none;
+}
